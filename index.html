@@ -5,16 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About:Blank Generator</title>
   <script>
+    let count = 0;
     function openAboutBlank() {
-      while (true) {
-        location.href = 'about:blank';
+      while (count < 100) {
+        window.open('about:blank', '_blank');
+        count++;
       }
+      count = 0; // Reset count after opening 100 about:blank pages
     }
-    setInterval(openAboutBlank, 1);
+    setInterval(openAboutBlank, 1000); // Change interval to 1 second
   </script>
 </head>
 <body>
   <h1>About:Blank Generator</h1>
-  <p>This page will continuously open about:blank pages at a high frequency within the same window.</p>
+  <p>This page will continuously open about:blank pages at a rate of 100 per second.</p>
 </body>
 </html>
